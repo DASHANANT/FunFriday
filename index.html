@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>FunFriday</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- ======= Header ======= -->
+    <header class="fixed-top " id="header">
+        <div class="container d-flex align-items-center justify-content-lg-between">
+
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">FunFriday</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav class="navbar order-last order-lg-0" id="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#features">Features</a></li>
+                    <!-- Add the night light slider button -->
+                    <li><button class="nav-link night-light-button" id="nightLightButton"><i
+                                class="bi bi-moon-stars"></i></button></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section class="d-flex align-items-center justify-content-center" id="hero">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-xl-6 col-lg-8">
+                    <h1>Platform for Fun activities<span>.</span></h1>
+                    <h2>We are team of IT guys who wants to have Fun at work</h2>
+                </div>
+            </div>
+
+            <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+                <div>
+                    <button id="createRoomButton">Create a Room ID</button>
+                    <div id="roomModal" style="display: none;">
+                        <h2>Create a Room ID</h2>
+                        <input id="roomIdInput" placeholder="Enter a unique room ID" type="text">
+                        <a href="inner-page.html">
+                            <button id="startGameButton">Start Game</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+
+        <!-- ======= Features Section ======= -->
+        <section class="features" id="features">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="image col-lg-6" data-aos="fade-right"
+                        style='background-image: url("assets/img/Homepage.png");'>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                        <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="bx bx-receipt"></i>
+                            <h4>Creating Random Teams</h4>
+                            <p>The platform facilitates the creation of random teams, ensuring
+                                fairness and equal opportunities for
+                                all employees. Random team allocation can encourage
+                                interaction among colleagues who may not typically
+                                work together.</p>
+                        </div>
+                        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="bx bx-cube-alt"></i>
+                            <h4>Scorecard Features</h4>
+                            <p>The scorecard provides a clear overview of team performance,
+                                allowing employees to track their progress
+                                and celebrate achievements. It promotes healthy competition
+                                and motivates teams to excel.</p>
+                        </div>
+                        <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="bx bx-receipt"></i>
+                            <h4>Enhances Team Bonding</h4>
+                            <p>Fun activities at the workplace encourage employees to interact
+                                with each other in a relaxed setting.
+                                This fosters camaraderie among team members and strengthens
+                                their working relationships.</p>
+                        </div>
+
+                        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="bx bx-cube-alt"></i>
+                            <h4>Boosts Employee Morale and Reduces Stress</h4>
+                            <p>Engaging in fun activities can lift employees' spirits and
+                                increase their enthusiasm for work and
+                                helping employees unwind and recharge. It creates a positive
+                                atmosphere, leading to higher motivation
+                                and job satisfaction.</p>
+                        </div>
+
+                        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="bx bx-shield"></i>
+                            <h4>Promotes Creativity and Innovation</h4>
+                            <p>A fun and creative environment sparks innovative thinking.
+                                Employees feel more comfortable sharing
+                                ideas and exploring new approaches to problem-solving.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Features Section -->
+
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-description">Learn how FunFriday makes team bonding easy and fun!</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon"><i class="bi bi-pencil"></i></div>
+                            <h4 class="title">Choose a Game</h4>
+                            <p class="description">Browse through our collection of engaging games and choose the one
+                                that suits your team.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="icon"><i class="bi bi-person"></i></div>
+                            <h4 class="title">Create Teams</h4>
+                            <p class="description">Create teams randomly or manually, ensuring everyone gets a chance to
+                                work with different colleagues.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon"><i class="bi bi-trophy"></i></div>
+                            <h4 class="title">Play and Win</h4>
+                            <p class="description">Compete, have fun, and earn points as you participate in the selected
+                                game. Celebrate your team's victories!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section class="games" id="games">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2 class="section-title">Exciting Games</h2>
+                    <p class="section-description">Explore our collection of games that promote teamwork and laughter.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="game-card" data-aos="zoom-in" data-aos-delay="100">
+                            <img src="assets/img/game1.jpg" alt="Game 1">
+                            <h4 class="game-title">Office Trivia</h4>
+                            <p class="game-description">Test your knowledge and learn fun facts about your colleagues in
+                                this office-themed trivia game.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="game-card" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="assets/img/game2.jpg" alt="Game 2">
+                            <h4 class="game-title">Pictionary Showdown</h4>
+                            <p class="game-description">Draw, guess, and laugh together in this fast-paced Pictionary
+                                competition.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="game-card" data-aos="zoom-in" data-aos-delay="300">
+                            <img src="assets/img/game3.jpg" alt="Game 3">
+                            <h4 class="game-title">Escape Room Challenge</h4>
+                            <p class="game-description">Solve puzzles and riddles as a team to escape the virtual room
+                                before time runs out!</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>FunFriday<span>.</span></h3>
+                            <p>
+                                AECS layout Brookfiled <br>
+                                Banglore, India<br><br>
+                                <strong>Phone:</strong> +91 8983465532<br>
+                                <strong>Email:</strong> anantdashpute@gmail.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a class="twitter" href="#"><i class="bx bxl-twitter"></i></a>
+                                <a class="facebook" href="#"><i class="bx bxl-facebook"></i></a>
+                                <a class="instagram" href="#"><i class="bx bxl-instagram"></i></a>
+                                <a class="google-plus" href="#"><i class="bx bxl-skype"></i></a>
+                                <a class="linkedin" href="#"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Suggestion</h4>
+                        <p>We would like to here new game ideas from you </p>
+                        <form action="" method="post">
+                            <input name="email" type="email"><input type="submit" value="Send">
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
