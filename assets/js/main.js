@@ -34,6 +34,14 @@
     }
   }
 
+  function showGameButtons() {
+    var tossCoinButton = document.getElementById("tossCoinButton");
+    var rollDiceButton = document.getElementById("rollDiceButton");
+
+    tossCoinButton.style.display = "block";
+    rollDiceButton.style.display = "block";
+}
+
   /**
    * Easy on scroll event listener 
    */
@@ -429,58 +437,73 @@ function showPlayersList() {
     playersList.appendChild(playerElement);
   }
 }
+// ... (previous code) ...
+
+let teams = []; // Global variable to store teams
 
 function createTeams() {
-  if (players.length === 0) {
-    alert('First, please add members.');
-    return;
+    if (players.length === 0) {
+        alert('First, please add members.');
+        return;
+    }
+
+    if (players.length < 4) {
+      alert('please add atleast 4 members.');
+      return;
   }
 
-  const numTeams = prompt('How many teams do you want to create?');
+    const numTeams = prompt('How many teams do you want to create?');
 
-  if (numTeams === null || numTeams === '') {
-    return;
-  }
+    if (numTeams === null || numTeams === '') {
+        return;
+    }
 
-  const numPlayersPerTeam = Math.ceil(players.length / numTeams);
-  let remainingPlayers = [...players];
-  let teams = [];
+    const numPlayersPerTeam = Math.ceil(players.length / numTeams);
+    let remainingPlayers = [...players];
+    teams = []; // Clear the existing teams array
 
-  for (let i = 0; i < numTeams; i++) {
-    const teamMembers = remainingPlayers.splice(0, numPlayersPerTeam);
-    const teamName = generateRandomName();
-    teams.push({ name: teamName, members: teamMembers });
-  }
+    for (let i = 0; i < numTeams; i++) {
+        const teamMembers = remainingPlayers.splice(0, numPlayersPerTeam);
+        const teamName = generateRandomName();
+        teams.push({ name: teamName, members: teamMembers });
+    }
 
-  showTeamsList(teams);
-  hideInputAndButton(); // Hide player input section and "Create Teams" button
-  hidePlayerNames(); // Hide the player names after creating the teams
-  showGameSuggestions(); // Show game suggestions section after creating teams
+    showTeamsList(teams);
+    hideInputAndButton();
+    hidePlayerNames();
+    showGameSuggestions();
 }
 
 function showTeamsList(teams) {
-  const teamsList = document.getElementById('teamsList');
-  teamsList.innerHTML = '';
+    const teamsList = document.getElementById('teamsList');
+    teamsList.innerHTML = '';
 
-  for (const team of teams) {
-    const teamElement = document.createElement('div');
-    teamElement.classList.add('team');
+    for (let i = 0; i < teams.length; i++) {
+        const team = teams[i];
+        const teamElement = document.createElement('div');
+        teamElement.classList.add('team');
 
-    const teamNameElement = document.createElement('h3');
-    teamNameElement.textContent = team.name;
-    teamElement.appendChild(teamNameElement);
+        const teamNameElement = document.createElement('h3');
+        teamNameElement.textContent = team.name;
+        teamNameElement.setAttribute('contenteditable', 'true'); // Enable editing
+        teamNameElement.addEventListener('input', function () {
+            teams[i].name = this.textContent; // Update team name in the teams array
+        });
 
-    const membersListElement = document.createElement('ul');
-    for (const member of team.members) {
-      const memberElement = document.createElement('li');
-      memberElement.textContent = member;
-      membersListElement.appendChild(memberElement);
+        teamElement.appendChild(teamNameElement);
+
+        const membersListElement = document.createElement('ul');
+        for (const member of team.members) {
+            const memberElement = document.createElement('li');
+            memberElement.textContent = member;
+            membersListElement.appendChild(memberElement);
+        }
+        teamElement.appendChild(membersListElement);
+
+        teamsList.appendChild(teamElement);
     }
-    teamElement.appendChild(membersListElement);
-
-    teamsList.appendChild(teamElement);
-  }
 }
+
 
 function generateRandomName() {
   const adjectives = ['Awesome', 'Crazy', 'Fantastic', 'Incredible', 'Legendary', 'Spectacular'];
