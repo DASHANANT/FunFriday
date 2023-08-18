@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>play_game</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../../assets/img/favicon.png" rel="icon">
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="fixed-top header-inner-pages" id="header">
+        <div class="container d-flex align-items-center justify-content-lg-between">
+            <h1 class="logo me-auto me-lg-0"><a href="../../index.html">FunFriday<span>.</span></a>
+            </h1>
+            <a class="get-started-btn scrollto" href="../../inner-page.html">back</a>
+        </div>
+
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Guess The Word</h2>
+                <ol>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="play_guess_word.html">startGame</a></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+    <main id="main">
+
+        <!-- <p>Select a word... (Your game rules here)</p> -->
+        <div class="container">
+            <div class="center-home-game">
+                <div class="row">
+                    <div class="col-lg-4 col-md-2">
+                        <h2 id="categorySelectheading">Select a Category</h2>
+                        <select id="categorySelect">
+                            <option value="animals">Animals</option>
+                            <option value="movies">Bollywood Movies</option>
+                            <option value="things">Things</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="flowers">Flowers</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-md-2">
+                        <h2 id="categorySelectheading">Game Time</h2>
+                        <div id="timeSelection">
+                            <label for="timeSelect">Time:</label>
+                            <select id="timeSelect" onchange="updateGameTime()">
+                                <option value="60">1 min</option>
+                                <option value="120">2 mins</option>
+                                <option value="180">3 mins</option>
+                                <option value="300">5 mins</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-2">
+                        <button id="startButton" onclick="startGame()">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timercontain">
+            <div id="gameTimer">Time left: <span id="timeLeft">--:--</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="center-table">
+                <table id="results" style="display: none;">
+                    <tr>
+                        <th>Correct Guesses</th>
+                        <th>Pass Count</th>
+                    </tr>
+                    <tr>
+                        <td id="correctCount">0</td>
+                        <td id="passCount">0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="timercontain">
+            <div id="wordDisplay"></div>
+            <div id="timer" style="display: none;">30</div>
+            <div id="timerExpired">Time's Up!</div>
+
+            <div class="center-game-buttons">
+                <div id="buttons" style="display: none;">
+                    <button onclick="wordGuessed(true)">Correct</button>
+                    <button onclick="wordGuessed(false)">Pass</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- End #main -->
+</body>
+
+<div id="preloader"></div>
+<a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="../../assets/vendor/aos/aos.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="../../assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/Play/guess_word.js"></script>
+</body>
+
+</html>
+
+</html>
