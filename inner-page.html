@@ -36,128 +36,114 @@
 
     <!-- ======= Header ======= -->
     <header class="fixed-top header-inner-pages" id="header">
-        <div class="container d-flex align-items-center justify-content-lg-between">
-
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">FunFriday<span>.</span></a>
-            </h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+        <div class="container d-flex align-items-center justify-content-between">
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">FunFriday<span>.</span></a></h1>
             <nav class="navbar order-last order-lg-0" id="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-                    <li class="dropdown"><a href="#"><span> Games </span> <i class="bi bi-chevron-down"></i></a>
+                    <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span> Games </span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="src/Main_game_page/Team-Games.html">Team Games</a></li>
                             <li><a href="src/Main_game_page/Fun-games.html">Fun Games</a></li>
-                            <li class="dropdown"><a href="src/Main_game_page/Tech-games.html"><span>Tech games</span> <i
+                            <li class="dropdown">
+                                <a href="src/Main_game_page/Tech-games.html"><span>Tech games</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="src/games/Pass_present.html">Passing
-                                            Presentation</a></li>
+                                    <li><a href="src/games/Pass_present.html">Passing Presentation</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="src/Main_game_page/Online-games.html"><span>Online
-                                        Games</span>
-                                    <i class="bi bi-chevron-right"></i></a>
+                            <li class="dropdown">
+                                <a href="src/Main_game_page/Online-games.html"><span>Online Games</span> <i
+                                        class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="src/games/Guess_the_word.html">Guess the
-                                            movie</a></li>
+                                    <li><a href="src/games/Guess_the_word.html">Guess the movie</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="scorecard.html">Scorecard</a></li>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
-            <!-- .navbar -->
         </div>
     </header>
+    
     <!-- End Header -->
 
     <main id="main">
-
-        <!-- ======= Breadcrumbs ======= -->
-        <section class="breadcrumbs">
-            <div class="container">
-
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Fun activities</h2>
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Fun activities</li>
-                    </ol>
-                </div>
-
-            </div>
-        </section>
-        <!-- End Breadcrumbs -->
-
         <section class="inner-page">
-            <div class="container">
-                <h1>Make Your Teams</h1>
-                <div class="input-section">
-                    <input id="playerName" placeholder="Enter player name" type="text">
-                    <button onclick="addPlayer()">Add Player</button>
+            <div class="container" id="createTeamssection">
+                <h1 class="section-title">Make Your Teams</h1>
+                <div class="player-profile-section">
+                    <h2 class="section-title">Player Profiles</h2>
+                    <form id="playerForm" class="player-form">
+                        <label for="playerName">Player Name:</label>
+                        <input type="text" id="playerName" required>
+
+                        <label for="playerPhoto">Player Photo:</label>
+                        <input type="file" id="playerPhoto" accept="image/*" required>
+
+                        <button type="button" onclick="addPlayerProfile()" class="btn btn-primary">Add Player</button>
+                    </form>
+                    <div class="d-flex flex-wrap" id="playersList"></div>
                 </div>
-                <div id="playersList"></div>
-                <button id="createTeamsBtn" onclick="createTeams()">Create Teams</button>
-                <div class="teams-container" id="teamsList"></div>
-
-                <!-- New section for game suggestions -->
-                <div class="games-section" id="gamesSection">
-                    <h2>Game Suggestions</h2>
-                    <p>
-                        Choose from a variety of fun and engaging games for your event. Whether you want to test your
-                        creativity or challenge your team's knowledge, we have something for everyone.
-                    </p>
-                    <div class="game-row" id="techGamesContainer">
-                        <!-- Tech Game 1 -->
-                        <div class="game-box" data-aos="zoom-in" data-aos-delay="300">
-                            <img alt="Tech Game 1" src="assets\img\games\Auction.png">
-                            <p class="game-name">Auction with Project</p>
-                            <button href="src/games/auction.html">Rules</button>
-                        </div>
-
-                        <!-- Tech Game 2 -->
-                        <div class="game-box" data-aos="zoom-in" data-aos-delay="300">
-                            <img alt="Tech Game 2" src="assets\img\games\presentation.png">
-                            <p class="game-name">Passing Presentation</p>
-                            <button href="src/games/Pass_present.html">Rules</button>
-                        </div>
-                        <!-- Add more tech games here -->
-                    </div>
-
-                    <div class="game-row" id="funGamesContainer">
-                        <!-- Fun Game 1 -->
-                        <div class="game-box" data-aos="zoom-in" data-aos-delay="300">
-                            <img alt="Fun Game 1" src="assets\img\games\guess_movie.png">
-                            <p class="game-name">Guess the movie</p>
-                            <button href="src/games/Guess_the_word.html">Rules</button>
-                        </div>
-
-                        <!-- Fun Game 2 -->
-                        <div class="game-box" data-aos="zoom-in" data-aos-delay="300">
-                            <img alt="Fun Game 2" src="assets\img\games\salesman.png">
-                            <p class="game-name">Sale your partner</p>
-                            <button href="src/games/Sale_your_partner.html">Rules</button>
-                        </div>
-                        <!-- Add more fun games here -->
-
-                        <div class="game-box" data-aos="zoom-in" data-aos-delay="300">
-                            <img alt="Fun Game 3" src="assets/img/games/pictionary.png">
-                            <p class="game-name">Pictionary Showdown</p>
-                            <button href="#">Rules</button>
-                        </div>
+                <button id="createTeamsBtn" onclick="createTeams()" class="btn btn-success">Create Teams</button>
+                <!-- Display created teams similar to the icon-icon-box format -->
+                <div id="teamsListSection" style="display: none;">
+                    <h2 class="section-title">Created Teams</h2>
+                    <div class="row" id="teamsList">
+                        <!-- Created teams will be displayed here -->
                     </div>
                 </div>
             </div>
+            <section class="services bg-light" id="gamesSection">
+                <div class="container" data-aos="fade-up">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="icon">
+                                    <img src="assets/img/games/guess_movie.png" width="80" height="80">
+                                </div>
+                                <h4 class="title">Guess the word</h4>
+                                <a href="src/games/Guess_the_word.html" class="btn btn-primary">Rules</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="icon">
+                                    <img src="assets/img/games/presentation.png" width="80" height="80">
+                                </div>
+                                <h4 class="title">Passing Presentation</h4>
+                                <a href="src/games/Pass_present.html" class="btn btn-primary">Rules</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="icon">
+                                    <img src="assets/img/games/salesman.png" width="80" height="80">
+                                </div>
+                                <h4 class="title">Sale your partner</h4>
+                                <a href="#" class="btn btn-primary">Rules</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="icon">
+                                    <img src="assets/img/games/pictionary.png" width="80" height="80">
+                                </div>
+                                <h4 class="title">Pictionary Showdown</h4>
+                                <a href="#" class="btn btn-primary">Rules</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
+
+
 
     </main>
     <!-- End #main -->
-
 
     <div id="preloader"></div>
     <a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i
@@ -174,7 +160,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="assets/js/player-profile.js"></script>
 </body>
 
 </html>
