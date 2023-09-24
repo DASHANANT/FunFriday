@@ -356,7 +356,7 @@ function createRoomFile(roomId) {
 
   const data = {
     room_id: roomId,
-    players: playerNames,
+    playerProfiles: playerNames,
     teams: teamNames
   };
 
@@ -378,7 +378,7 @@ function addPlayersAndGenerateTeams(roomId) {
   // Now, you can store the data in a JSON format and write it to the user's local system
   const data = {
     room_id: roomId,
-    players: playerNames,
+    playerProfiles: playerNames,
     teams: teamNames
   };
 
@@ -399,146 +399,6 @@ function addPlayersAndGenerateTeams(roomId) {
   // Close the modal after the operation is completed
   document.getElementById("roomModal").style.display = "none";
 }
-
-
-/**
-  * inner page js
-  */
-
-let players = [];
-
-function addPlayer() {
-  const playerNameInput = document.getElementById('playerName');
-  let playerName = playerNameInput.value.trim();
-
-  if (playerName === '') {
-    return; // Ignore empty player names
-  }
-
-  // Check for duplicate names
-  let playerCount = 1;
-  while (players.includes(playerName)) {
-    playerName = `${playerName} (${playerCount})`;
-    playerCount++;
-  }
-
-  players.push(playerName);
-  playerNameInput.value = '';
-  showPlayersList();
-}
-
-function showPlayersList() {
-  const playersList = document.getElementById('playersList');
-  playersList.innerHTML = '';
-
-  for (const player of players) {
-    const playerElement = document.createElement('div');
-    playerElement.textContent = player;
-    playersList.appendChild(playerElement);
-  }
-}
-// ... (previous code) ...
-
-let teams = []; // Global variable to store teams
-
-function createTeams() {
-    if (players.length === 0) {
-        alert('First, please add members.');
-        return;
-    }
-
-    if (players.length < 4) {
-      alert('please add atleast 4 members.');
-      return;
-  }
-
-    const numTeams = prompt('How many teams do you want to create?');
-
-    if (numTeams === null || numTeams === '') {
-        return;
-    }
-
-    const numPlayersPerTeam = Math.ceil(players.length / numTeams);
-    let remainingPlayers = [...players];
-    teams = []; // Clear the existing teams array
-
-    for (let i = 0; i < numTeams; i++) {
-        const teamMembers = remainingPlayers.splice(0, numPlayersPerTeam);
-        const teamName = generateRandomName();
-        teams.push({ name: teamName, members: teamMembers });
-    }
-
-    showTeamsList(teams);
-    hideInputAndButton();
-    hidePlayerNames();
-    showGameSuggestions();
-}
-
-function showTeamsList(teams) {
-    const teamsList = document.getElementById('teamsList');
-    teamsList.innerHTML = '';
-
-    for (let i = 0; i < teams.length; i++) {
-        const team = teams[i];
-        const teamElement = document.createElement('div');
-        teamElement.classList.add('team');
-
-        const teamNameElement = document.createElement('h3');
-        teamNameElement.textContent = team.name;
-        teamNameElement.setAttribute('contenteditable', 'true'); // Enable editing
-        teamNameElement.addEventListener('input', function () {
-            teams[i].name = this.textContent; // Update team name in the teams array
-        });
-
-        teamElement.appendChild(teamNameElement);
-
-        const membersListElement = document.createElement('ul');
-        for (const member of team.members) {
-            const memberElement = document.createElement('li');
-            memberElement.textContent = member;
-            membersListElement.appendChild(memberElement);
-        }
-        teamElement.appendChild(membersListElement);
-
-        teamsList.appendChild(teamElement);
-    }
-}
-
-
-function generateRandomName() {
-  const adjectives = ['Awesome', 'Crazy', 'Fantastic', 'Incredible', 'Legendary', 'Spectacular'];
-  const nouns = ['Dragons', 'Honey Badgers', 'Ninjas', 'Penguins', 'Samurais', 'Wizards'];
-  const adjectiveIndex = Math.floor(Math.random() * adjectives.length);
-  const nounIndex = Math.floor(Math.random() * nouns.length);
-  return `${adjectives[adjectiveIndex]} ${nouns[nounIndex]}`;
-}
-
-function hideInputAndButton() {
-  const inputSection = document.querySelector('.input-section');
-  const createTeamsBtn = document.getElementById('createTeamsBtn');
-
-  inputSection.style.display = 'none';
-  createTeamsBtn.style.display = 'none';
-}
-
-function hidePlayerNames() {
-  const playersList = document.getElementById('playersList');
-  playersList.style.display = 'none';
-}
-
-function showGameSuggestions() {
-  const gamesSection = document.querySelector('.games-section');
-  gamesSection.style.display = 'block';
-}
-
-
-// Handle Enter key press in the input field
-document.getElementById('playerName').addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // Prevent form submission
-    addPlayer();
-  }
-});
 
 
 function tossCoin() {
@@ -578,3 +438,25 @@ function toggleNightLight() {
 
 // Attach event listener to the night light button
 nightLightButton.addEventListener('click', toggleNightLight);
+
+// JavaScript for showing the login modal
+// JavaScript for showing the create modal and hiding the login modal
+function showCreateModal() {
+  const createModal = document.getElementById("createModal");
+  const loginModal = document.getElementById("loginModal");
+  createModal.style.display = "block";
+  loginModal.style.display = "none";
+  document.getElementById("loginRoomButton").style.display = "none";
+  document.getElementById("createRoomButton").style.display = "none";
+}
+
+// JavaScript for showing the login modal and hiding the create modal
+function showLoginModal() {
+  const createModal = document.getElementById("createModal");
+  const loginModal = document.getElementById("loginModal");
+  createModal.style.display = "none";
+  loginModal.style.display = "block";
+  document.getElementById("loginRoomButton").style.display = "none";
+  document.getElementById("createRoomButton").style.display = "none";
+}
+
