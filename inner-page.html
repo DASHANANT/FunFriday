@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Activites- FunFriday </title>
+    <title>Activites- FunFriday</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -33,49 +33,19 @@
 </head>
 
 <body>
-
-    <!-- ======= Header ======= -->
     <header class="fixed-top header-inner-pages" id="header">
-        <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo me-auto me-lg-0"><a href="index.html">FunFriday<span>.</span></a></h1>
-            <nav class="navbar order-last order-lg-0" id="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="#hero">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#"><span> Games </span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="src/Main_game_page/Team-Games.html">Team Games</a></li>
-                            <li><a href="src/Main_game_page/Fun-games.html">Fun Games</a></li>
-                            <li class="dropdown">
-                                <a href="src/Main_game_page/Tech-games.html"><span>Tech games</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="src/games/Pass_present.html">Passing Presentation</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="src/Main_game_page/Online-games.html"><span>Online Games</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="src/games/Guess_the_word.html">Guess the movie</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="scorecard.html">Scorecard</a></li>
-                </ul>
-            </nav>
+        <div class="container d-flex align-items-center justify-content-center">
+            <div class="room-number rounded-pill bg-primary text-white p-2">
+                Room ID: <span id="roomIDPlaceholder"></span>
+            </div>
         </div>
     </header>
-    
-    <!-- End Header -->
-
     <main id="main">
         <section class="inner-page">
             <div class="container" id="createTeamssection">
                 <h1 class="section-title">Make Your Teams</h1>
                 <div class="player-profile-section">
-                    <h2 class="section-title">Player Profiles</h2>
+                    <h2 class="section-title">Add Player Profiles</h2>
                     <form id="playerForm" class="player-form">
                         <label for="playerName">Player Name:</label>
                         <input type="text" id="playerName" required>
@@ -88,51 +58,52 @@
                     <div class="d-flex flex-wrap" id="playersList"></div>
                 </div>
                 <button id="createTeamsBtn" onclick="createTeams()" class="btn btn-success">Create Teams</button>
-                <!-- Display created teams similar to the icon-icon-box format -->
-                <div id="teamsListSection" style="display: none;">
-                    <h2 class="section-title">Created Teams</h2>
-                    <div class="row" id="teamsList">
-                        <!-- Created teams will be displayed here -->
-                    </div>
-                </div>
             </div>
+
+            <section class="services bg-light" id="teamsListSection">
+                <div class="container" data-aos="fade-up">
+                    <h1 class="section-title">Formed Teams</h1>
+                    <div id="teamsList"></div>
+                </div>
+            </section>
+
             <section class="services bg-light" id="gamesSection">
                 <div class="container" data-aos="fade-up">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                                 <div class="icon">
-                                    <img src="assets/img/games/guess_movie.png" width="80" height="80">
+                                    <img src="assets/img/games/guess_movie.png" width="130" height="100">
                                 </div>
-                                <h4 class="title">Guess the word</h4>
-                                <a href="src/games/Guess_the_word.html" class="btn btn-primary">Rules</a>
+                                <h4 class="title">Online</h4>
+                                <a href="src/game_type/Online-games.html" class="btn btn-primary">More Games</a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
                                 <div class="icon">
-                                    <img src="assets/img/games/presentation.png" width="80" height="80">
+                                    <img src="assets\img\games\tech\tech_games.png" width="130" height="100">
                                 </div>
-                                <h4 class="title">Passing Presentation</h4>
-                                <a href="src/games/Pass_present.html" class="btn btn-primary">Rules</a>
+                                <h4 class="title">Tech</h4>
+                                <a href="src/game_type/Tech-games.html" class="btn btn-primary">More Games</a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
                                 <div class="icon">
-                                    <img src="assets/img/games/salesman.png" width="80" height="80">
+                                    <img src="assets/img/games/salesman.png" width="130" height="100">
                                 </div>
-                                <h4 class="title">Sale your partner</h4>
-                                <a href="#" class="btn btn-primary">Rules</a>
+                                <h4 class="title">Offline</h4>
+                                <a href="src/game_type/Offline-games.html" class="btn btn-primary">More Games</a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
                                 <div class="icon">
-                                    <img src="assets/img/games/pictionary.png" width="80" height="80">
+                                    <img src="assets/img/games/pictionary.png" width="130" height="100">
                                 </div>
-                                <h4 class="title">Pictionary Showdown</h4>
-                                <a href="#" class="btn btn-primary">Rules</a>
+                                <h4 class="title">Fun</h4>
+                                <a href="src/game_type/Fun-games.html" class="btn btn-primary">More Games</a>
                             </div>
                         </div>
                     </div>
@@ -159,8 +130,24 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
+    <script>
+        // Retrieve the room ID from session storage
+        const storedRoomID = sessionStorage.getItem("roomID");
+    
+        // Check if there's a stored room ID
+        if (storedRoomID) {
+            // You can display the room ID wherever you need it on the inner pages
+            // For example, update the text of a placeholder element
+            const roomIDPlaceholder = document.getElementById("roomIDPlaceholder");
+            if (roomIDPlaceholder) {
+                roomIDPlaceholder.textContent = storedRoomID;
+            }
+        }
+    </script>
+    
     <script src="assets/js/main.js"></script>
     <script src="assets/js/player-profile.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 
 </html>
